@@ -26,7 +26,7 @@ exports.createCountry = catchAsync(async(req, res, next)=>{
     if(!country){
         return new AppError('Could not able to find document of that id', 404)
     }
-
+   
     res.status(201).json({
         status: 'success',
         data: {

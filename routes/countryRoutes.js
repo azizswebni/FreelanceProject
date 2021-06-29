@@ -17,7 +17,7 @@ var upload = multer({ storage: storage });
 
 router.route("/").get(countryController.getCountries);
 
-router.route("/").post(upload.single("flag"),countryController.createCountry);
+router.route("/").post(upload.single('image'),countryController.createCountry);
 
 router.route("/:id").get(countryController.geCountry);
 

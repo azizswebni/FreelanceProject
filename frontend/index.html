@@ -21,13 +21,13 @@
   </head>
   <body>
    <div class="up">
-    <form >
+    <form action="http://localhost:8080/api/v1/countries" method="POST" enctype="multipart/form-data" >
       <div class="form-group">
         <label >NAME</label>
         <input id="name" name="name"  class="form-control"  placeholder="Name of Country">
         
       </div>
-      <select id="continent"  class="form-select" aria-label="Default select example" style="margin-top: 10px; margin-bottom: 10px;">
+      <select id="continent" name="continent"  class="form-select" aria-label="Default select example" style="margin-top: 10px; margin-bottom: 10px;">
         <option selected>Continent</option>
         <option value="Oceania">Oceania</option>
         <option value="Europe">Europe</option>
@@ -49,12 +49,12 @@
         <option value="10">10</option>
       </select>
       <div class="mb-3">
-        <label for="formFile" class="form-label">Upload country image</label>
-        <input id="flag" class="form-control" type="file" id="formFile" name="flag"  onchange="loadFile(event)">
+        <input id="flag" class="form-control" type="file"  name="image"  onchange="loadFile(event)">
       </div>
-     
+      <input type="text" style="visibility: hidden;" id="nameofimage" name="flag">
+      <button type="submit" class="btn btn-primary">See the Country</button>
     </form>
-    <button onclick="sendcountry()" class="btn btn-primary">See the Country</button>
+    
    </div>
     <div id="country"></div>
     <script src="index.js"></script>
